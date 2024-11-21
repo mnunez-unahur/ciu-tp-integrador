@@ -4,7 +4,7 @@ import SearchBar from '../components/SearchBar'
 import ProductCard from '../components/ProductCard'
 
 // importamos los modelos
-import getProductos from '../model/productos';
+import {getProductos} from '../services/productos';
 
 function Catalogo() {
     const [busqueda, setBusqueda] = useState("cosito del coso");
