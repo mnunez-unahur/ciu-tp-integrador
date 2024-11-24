@@ -21,7 +21,6 @@ function Catalogo() {
       };
 
     useEffect(() => {
-        console.log("limpiando")
         filtrar("")
     }, [listaProductos]);
 
