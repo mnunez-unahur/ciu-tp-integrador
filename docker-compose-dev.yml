@@ -1,4 +1,5 @@
 services:
   web:
-    # volumes:
-    #   - api_data:/app/data
+    volumes:
+      - ./publc:/app/public
+      - ./src:/app/src

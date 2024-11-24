@@ -45,7 +45,7 @@ function Catalogo() {
             <span>{producto.nombre}</span>
             <span>{producto.descripcion}</span>
             </li>
-        ))}            
+        ))}
         </ul>
     </div>
     );
