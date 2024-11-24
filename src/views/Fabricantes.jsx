@@ -1,8 +1,45 @@
+import React, { useState, useEffect } from 'react';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+
+import ManufacturerCard from '../components/ManufacturerCard'
+
+import {getFabricantes} from '../services/fabricantes';
+
+
 function Fabricantes() {
+    const [listaFabricantes, setlistaFabricantes] = useState([]);
+
+
+    useEffect(() => {
+        async function getP() {
+          console.log("hola")
+            const fabricantes = await getFabricantes()
+            setlistaFabricantes(fabricantes)
+        }
+        getP()
+    }, []);
+
+
+
     return (
-    <div>
-     Fabricantes
-    </div>
-    );
+    <Container>
+      <Row>
+        {listaFabricantes.map(f => (
+          <Col style={{padding: "10px"}}>
+            <ManufacturerCard key={f.id}
+              nombre={f.nombre}
+              direccion={f.direccion}
+              telefono={f.numeroContacto}
+              img={f.pathImgPerfil}/>
+          </Col>
+          ))}
+      </Row>
+    </Container>
+
+  );
 }
 export default Fabricantes;

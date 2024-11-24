@@ -1,4 +1,4 @@
-export async function getProductos() {
+export async function getFabricantes() {
   const url = "/api/fabricantes";
   let result = []
   try {

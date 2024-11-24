@@ -1,4 +1,4 @@
-export async function getProductos() {
+export async function getComponentes() {
   const url = "/api/componentes";
   let result = []
   try {

@@ -1,7 +1,7 @@
 function Componentes() {
     return (
     <div>
-     Componentes prueba
+     Componentes
     </div>
     );
 }
