@@ -5,9 +5,14 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function SearchBar({value, onChange}) {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+
+
+
+function SearchBar({ value, onChange }) {
     const [busqueda, setBusqueda] = useState("");
-    
+
     useEffect(() => {
         setBusqueda(value)
     }, [value]);
@@ -17,19 +22,20 @@ function SearchBar({value, onChange}) {
         <Container>
             <Row>
                 <Col xs={8} md={9}>
-                    <Form.Control type="text" 
-                    value={busqueda} 
-                    onChange={(e)=>{setBusqueda(e.target.value)}} 
+                    <Form.Control type="text"
+                        value={busqueda}
+                        onChange={(e) => { setBusqueda(e.target.value) }}
                     />
                 </Col>
                 <Col >
-                    <Button 
-                        onClick={()=>{onChange(busqueda)}}
+                    <Button
+                        onClick={() => { onChange(busqueda) }}
                         variant="primary"
-                        >Buscar</Button>
+                    >
+                        <FontAwesomeIcon icon={faMagnifyingGlass} /></Button>
                 </Col>
             </Row>
-      </Container>
+        </Container>
     );
 }
 export default SearchBar;
