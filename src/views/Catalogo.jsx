@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import SearchBar from '../components/SearchBar'
 import ProductCard from '../components/ProductCard'
 
 import Container from 'react-bootstrap/Container';
 // importamos los modelos
 import { getProductos } from '../services/productos';
+
+
 
 function Catalogo() {
     const [busqueda, setBusqueda] = useState("cosito del coso");
@@ -39,15 +44,18 @@ function Catalogo() {
     return (
 
         <Container>
-            <SearchBar value={busqueda} onChange={filtrar} placeholder='Buscar producto...'/>
-            <ul>
-                {productosFiltrados.map(producto => (
-                    <li key={producto.id}>
-                        <span>{producto.nombre}</span>
-                        <span>{producto.descripcion}</span>
-                    </li>
-                ))}
-            </ul>
+            <SearchBar value={busqueda} onChange={filtrar} placeholder='Buscar producto...' />
+            {productosFiltrados.map(p => (
+                <Row key={p.id}>
+                    <Col style={{ padding: "10px"}}>
+                        <ProductCard 
+                            nombre={p.nombre}
+                            descripcion={p.descripcion}
+                            precio={p.precio}
+                            img={p.pathImg} />
+                    </Col>
+                </Row>
+            ))}
         </Container>
     );
 }
