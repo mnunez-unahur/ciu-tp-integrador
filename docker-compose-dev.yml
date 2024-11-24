@@ -1,5 +1,5 @@
 services:
   web:
     volumes:
-      - ./publc:/app/public
+      - ./public:/app/public
       - ./src:/app/src
