@@ -7,16 +7,22 @@ services:
       - ${BIND_PORT:-3000}:80
     depends_on:
       - api
+      - web
+  web:
+    image: web
+    build:
+      context: .
+      dockerfile: ./build/web/Dockerfile
+    environment:
+      PORT: 3000
   api:
     image: api
     build:
       context: .
       dockerfile: ./build/api/Dockerfile
-    # ports:
-    #   - ${API_PORT:-3000}:3000
     environment:
       NODE_ENV: production
-      BIND_PORT: ${API_PORT:-3000}
+      BIND_PORT: 3000
     volumes:
       - api_data:/app/data
 volumes:
