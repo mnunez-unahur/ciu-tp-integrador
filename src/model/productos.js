@@ -62,13 +62,4 @@ const mockProductos =  [
   ];
 
 
-export default async function getProductos() {
-    //TODO: hacer cunsulta a la api
-    console.log("acaaaaa")
-    return  Promise.resolve(mockProductos)
-
-
-
-}
-
-
+export default mockProductos
