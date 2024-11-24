@@ -1,5 +1,5 @@
 export async function getProductos() {
-  const url = "/api/componentes";
+  const url = "/api/fabricantes";
   let result = []
   try {
     const response = await fetch(url);
