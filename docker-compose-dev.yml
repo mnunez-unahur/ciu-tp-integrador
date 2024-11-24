@@ -1,0 +1,5 @@
+services:
+  web:
+    volumes:
+      - ./publc:/app/public
+      - ./src:/app/src

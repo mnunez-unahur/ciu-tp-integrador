@@ -15,6 +15,7 @@ function Catalogo() {
     const filtrar = (texto) => {
         setBusqueda(texto)
         texto = texto.toLowerCase()
+        console.log(listaProductos)
         const pf = listaProductos.filter((p)=>p.nombre.toLowerCase().includes(texto) || p.descripcion.toLowerCase().includes(texto))
         setProductosFiltrados(pf)
       };
@@ -41,11 +42,11 @@ function Catalogo() {
         <SearchBar value={busqueda} onChange={filtrar} />
         <ul>
         {productosFiltrados.map(producto => (
-            <li>
+            <li key={producto.id}>
             <span>{producto.nombre}</span>
             <span>{producto.descripcion}</span>
             </li>
-        ))}            
+        ))}
         </ul>
     </div>
     );
