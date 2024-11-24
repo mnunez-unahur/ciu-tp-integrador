@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from '../components/SearchBar'
 import ProductCard from '../components/ProductCard'
 
+import Container from 'react-bootstrap/Container';
 // importamos los modelos
-import {getProductos} from '../services/productos';
+import { getProductos } from '../services/productos';
 
 function Catalogo() {
     const [busqueda, setBusqueda] = useState("cosito del coso");
@@ -16,9 +17,9 @@ function Catalogo() {
         setBusqueda(texto)
         texto = texto.toLowerCase()
         console.log(listaProductos)
-        const pf = listaProductos.filter((p)=>p.nombre.toLowerCase().includes(texto) || p.descripcion.toLowerCase().includes(texto))
+        const pf = listaProductos.filter((p) => p.nombre.toLowerCase().includes(texto) || p.descripcion.toLowerCase().includes(texto))
         setProductosFiltrados(pf)
-      };
+    };
 
     useEffect(() => {
         filtrar("")
@@ -37,17 +38,17 @@ function Catalogo() {
 
     return (
 
-    <div>
-        <SearchBar value={busqueda} onChange={filtrar} />
-        <ul>
-        {productosFiltrados.map(producto => (
-            <li key={producto.id}>
-            <span>{producto.nombre}</span>
-            <span>{producto.descripcion}</span>
-            </li>
-        ))}
-        </ul>
-    </div>
+        <Container>
+            <SearchBar value={busqueda} onChange={filtrar} placeholder='Buscar producto...'/>
+            <ul>
+                {productosFiltrados.map(producto => (
+                    <li key={producto.id}>
+                        <span>{producto.nombre}</span>
+                        <span>{producto.descripcion}</span>
+                    </li>
+                ))}
+            </ul>
+        </Container>
     );
 }
 export default Catalogo;

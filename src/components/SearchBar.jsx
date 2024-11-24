@@ -10,7 +10,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 
 
-function SearchBar({ value, onChange }) {
+function SearchBar({ value, onChange, placeholder}) {
     const [busqueda, setBusqueda] = useState("");
 
     useEffect(() => {
@@ -19,10 +19,11 @@ function SearchBar({ value, onChange }) {
 
 
     return (
-        <Container>
+        <Container style={{marginBottom: '20px'}}>
             <Row>
                 <Col xs={8} md={9}>
-                    <Form.Control type="text"
+                    <Form.Control type="text" 
+                        placeholder={placeholder}
                         value={busqueda}
                         onChange={(e) => { setBusqueda(e.target.value) }}
                     />

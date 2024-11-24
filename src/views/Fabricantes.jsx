@@ -9,6 +9,7 @@ import ManufacturerCard from '../components/ManufacturerCard'
 
 import {getFabricantes} from '../services/fabricantes';
 
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 function Fabricantes() {
     const [listaFabricantes, setlistaFabricantes] = useState([]);
@@ -27,9 +28,13 @@ function Fabricantes() {
 
     return (
     <Container>
+      <Breadcrumb>
+                <Breadcrumb.Item active>Inicio</Breadcrumb.Item>
+                <Breadcrumb.Item active>Fabricantes</Breadcrumb.Item>
+      </Breadcrumb>
       <Row>
         {listaFabricantes.map(f => (
-          <Col style={{padding: "10px"}}>
+          <Col style={{padding: "10px", flexGrow: 0}}>
             <ManufacturerCard key={f.id}
               nombre={f.nombre}
               direccion={f.direccion}
