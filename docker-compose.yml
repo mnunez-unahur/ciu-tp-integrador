@@ -1,0 +1,15 @@
+services:
+  api:
+    image: api-productos
+    build:
+      context: .
+      dockerfile: ./build/api.Dockerfile
+    ports:
+      - ${API_PORT:-3000}:3000
+    environment:
+      NODE_ENV: production
+      BIND_PORT: ${API_PORT:-3000}
+    volumes:
+      - api_data:/app/data
+volumes:
+  api_data: {}
