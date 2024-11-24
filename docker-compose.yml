@@ -1,11 +1,19 @@
 services:
+  ingress:
+    image: ingress
+    build:
+      context: ./build/nginx
+    ports:
+      - ${BIND_PORT:-3000}:80
+    depends_on:
+      - api
   api:
-    image: api-productos
+    image: api
     build:
       context: .
-      dockerfile: ./build/api.Dockerfile
-    ports:
-      - ${API_PORT:-3000}:3000
+      dockerfile: ./build/api/Dockerfile
+    # ports:
+    #   - ${API_PORT:-3000}:3000
     environment:
       NODE_ENV: production
       BIND_PORT: ${API_PORT:-3000}
