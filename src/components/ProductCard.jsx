@@ -1,25 +1,42 @@
 
-import { Card,Container,Row, Col, Image } from 'react-bootstrap';
-export default function ProductCard({ nombre, descripcion, precio, img }) {
+import { Card, Container, Row, Col, Image, Button } from 'react-bootstrap';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
+export default function ProductCard({ id, nombre, descripcion, precio, img, enCarrito, onChangeCarrito }) {
     const pathImg = `/${img}`
     const imgStyles = {
-        width: 'calc(100% - 40px)',
+        width: '150px',
         height: '150px',
         margin: '20px'
     };
-
+    useEffect(() => {
+        console.log(enCarrito)
+    }, [enCarrito]);
+    
     return (
         <Card style={{}}>
 
-            <Card.Body style={{ display: 'flex', height: '150px' }}>
-                <Container>
-                    <Row>
-                        <Col xs="12" lg="3"> <Image href={pathImg}> </Image></Col>
-                        <Col xs="12" lg="7">contenido</Col>
-                        <Col xs="12" md="2" lg="1">botones</Col>
-                    </Row>
-                </Container>
+            <Card.Body >
 
+                <Row>
+                    <Col xs="12" sm="5" lg="3"><Image src={pathImg} style={imgStyles} /></Col>
+                    <Col xs="12" sm="5" lg="8" >
+                        <h3>{nombre}</h3>
+                        <p>{descripcion}</p>
+                        <p>${precio}</p>
+                    </Col>
+                    <Col xs="12" sm="2" lg="1">
+                        {(enCarrito) ?
+                            (<Button variant='danger' onClick={() => { onChangeCarrito(id,false) }}><FontAwesomeIcon icon={faCartShopping} /></Button>) :
+
+                            (<Button variant='primary' onClick={() => { onChangeCarrito(id,true) }}><FontAwesomeIcon icon={faCartShopping} /></Button>)
+                        }
+            
+                        
+                        </Col>
+                </Row>
 
             </Card.Body>
         </Card>
