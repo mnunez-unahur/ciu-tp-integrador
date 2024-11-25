@@ -2,9 +2,9 @@
 import { Card, Container, Row, Col, Image, Button } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
-export default function ProductCard({ id, nombre, descripcion, precio, img, enCarrito, onChangeCarrito }) {
+export default function ProductCard({ id, nombre, descripcion, precio, img, enCarrito, onChangeCarrito, onEdit }) {
     const pathImg = `/${img}`
     const imgStyles = {
         width: '150px',
@@ -12,9 +12,8 @@ export default function ProductCard({ id, nombre, descripcion, precio, img, enCa
         margin: '20px'
     };
     useEffect(() => {
-        console.log(enCarrito)
     }, [enCarrito]);
-    
+
     return (
         <Card style={{}}>
 
@@ -33,8 +32,9 @@ export default function ProductCard({ id, nombre, descripcion, precio, img, enCa
 
                             (<Button variant='primary' onClick={() => { onChangeCarrito(id,true) }}><FontAwesomeIcon icon={faCartShopping} /></Button>)
                         }
-            
-                        
+                            <Button variant='primary' onClick={() => { onEdit(id) }}><FontAwesomeIcon icon={faPenToSquare} /></Button>
+
+
                         </Col>
                 </Row>
 

@@ -10,7 +10,7 @@ import {LinkContainer} from 'react-router-bootstrap'
 
 function NavBar() {
   return (
-            <Navbar expand="lg" className="bg-body-tertiary">
+          <Navbar expand="lg" className="bg-body-tertiary" style={{position:"sticky"}}>
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand >Inicio</Navbar.Brand>
@@ -41,7 +41,7 @@ function NavBar() {
                 </Nav>
                 </Navbar.Collapse>
             </Container>
-            </Navbar>
+          </Navbar>
   );
 }
 

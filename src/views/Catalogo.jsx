@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react';
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {Row, Col, Breadcrumb, Button, Badge, Container} from 'react-bootstrap';
 
 import SearchBar from '../components/SearchBar'
 import ProductCard from '../components/ProductCard'
-
-import Container from 'react-bootstrap/Container';
-// importamos los modelos
-import { getProductos } from '../services/productos';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
-import { Button } from 'react-bootstrap';
-import Badge from 'react-bootstrap/Badge';
+import DetalleProducto from '../components/DetalleProducto'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
+
+import { getProductos } from '../services/productos';
+
+
 
 function Catalogo() {
     const [busqueda, setBusqueda] = useState("cosito del coso");
     const [listaProductos, setListaProductos] = useState([]);
     const [productosFiltrados, setProductosFiltrados] = useState([]);
     const [carrito, setCarrito] = useState([])
+    const [propiedadesVisibles, setPropiedadesVisibles] = React.useState(false);
+    const [productoActual, setProductoActual] = React.useState(0);
 
 
     const filtrar = (texto) => {
@@ -36,18 +36,24 @@ function Catalogo() {
     }, [listaProductos]);
 
 
+    async function getP() {
+        const prods = await getProductos()
+        setListaProductos(prods)
+    }
+
     useEffect(() => {
-        async function getP() {
-            const prods = await getProductos()
-            console.log(prods)
-            setListaProductos(prods)
-        }
         getP()
     }, []);
 
-    // useEffect(()=> {
-    //     console.log(carrito)
-    // },[carrito])
+    function editarProducto(id) {
+      setProductoActual(id)
+      setPropiedadesVisibles(true)
+    }
+
+    function cerrarDialogoProducto() {
+      setProductoActual(0)
+      setPropiedadesVisibles(false)
+    }
 
     function agregarQuitarCarrito(id, estado) {
 
@@ -83,12 +89,17 @@ function Catalogo() {
                             img={p.pathImg}
                             onChangeCarrito={agregarQuitarCarrito}
                             enCarrito={carrito.includes(p.id)}
+                            onEdit={editarProducto}
                         />
 
                     </Col>
                 </Row>
             ))}
-
+        <DetalleProducto
+          idProducto={productoActual}
+          show={propiedadesVisibles}
+          onHide={cerrarDialogoProducto}
+        />
         </Container>
     );
 }
