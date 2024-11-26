@@ -90,9 +90,10 @@ function Catalogo() {
         <Breadcrumb.Item active>Inicio</Breadcrumb.Item>
         <Breadcrumb.Item active>Catalogo</Breadcrumb.Item>
       </Breadcrumb>
+      
       <Button
         onClick={()=>{setMostrarCarrito(true)}}
-        style={{ position: "fixed", top: "50px", right: "50px", zIndex: "1000" }}>
+        style={{ position: "fixed", top: "95px", right: "10px", zIndex: "1000" }}>
         <FontAwesomeIcon icon={faCartShopping} />
         <Badge bg="secondary">  {carrito.length}</Badge>
       </Button>

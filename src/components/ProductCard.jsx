@@ -15,7 +15,7 @@ export default function ProductCard({ id, nombre, descripcion, precio, img, enCa
     }, [enCarrito]);
 
     return (
-        <Card style={{}}>
+        <Card >
 
             <Card.Body >
 
@@ -32,7 +32,7 @@ export default function ProductCard({ id, nombre, descripcion, precio, img, enCa
 
                             (<Button variant='primary' onClick={() => { onChangeCarrito(id,true) }}><FontAwesomeIcon icon={faCartShopping} /></Button>)
                         }
-                            <Button variant='primary' onClick={() => { onEdit(id) }}><FontAwesomeIcon icon={faPenToSquare} /></Button>
+                            <Button variant='outline-info' onClick={() => { onEdit(id) }} style={{ position: "absolute", top: "100px", right:"55px"}}><FontAwesomeIcon icon={faPenToSquare} /></Button>
 
 
                         </Col>
