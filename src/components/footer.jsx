@@ -20,7 +20,7 @@ function AppFooter() {
                 <Col md={3}>
                     <h6>INTEGRANTES</h6>
                     <p>
-                        <span>Ferrara Lucas</span>
+                        <span>Ferrara Facundo</span>
                         <br />
                         <span>Lenis Jonathan</span>
                         <br />
