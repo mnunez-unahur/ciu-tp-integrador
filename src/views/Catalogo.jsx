@@ -28,7 +28,6 @@ function Catalogo() {
   const filtrar = (texto) => {
     setBusqueda(texto)
     texto = texto.toLowerCase()
-    console.log(listaProductos)
     const pf = listaProductos.filter((p) => p.nombre.toLowerCase().includes(texto) || p.descripcion.toLowerCase().includes(texto))
     setProductosFiltrados(pf)
   };

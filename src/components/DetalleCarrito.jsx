@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Button, Modal, Row, Col, Image, Card, Form } from 'react-bootstrap';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-
-
-import { getProducto, getFabricantesDeProducto, getComponentesDeProducto } from '../services/productos';
 
 
 export default function DetalleCarrito({ carrito, onHide, show, onChange }) {

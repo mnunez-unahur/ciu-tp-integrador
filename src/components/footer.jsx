@@ -13,7 +13,7 @@ function AppFooter() {
         style={{
             backgroundColor: "#333",
             color: "white",
-            padding: "10px 100px",  // buscar otra forma de hacerlo
+            padding: "10px 100px",
         }}>
         <Container>
             <Row >
@@ -26,27 +26,21 @@ function AppFooter() {
                         <br />
                         <span>Martinez Lautaro</span>
                         <br />
-                        <span>Nunez Manuel</span>
+                        <span>Nuñez Manuel</span>
                     </p>
                 </Col>
                 <Col md={2}>
-                    <h6>EMPRESA</h6>
+                    <h6>HORARIOS</h6>
                     <Nav className="flex-column">
-                        <Nav.Link href="#acerca">Acerca de nosotros</Nav.Link>
-                        <Nav.Link href="#calidad">Calidad</Nav.Link>
-                        <Nav.Link href="#equipo">Equipo</Nav.Link>
+                        <p>Lunes a Viernes de 10 a 18:30 hs</p>
+                        <p>Sábados de 10 a 14 hs</p>
                     </Nav>
                 </Col>
 
                 <Col md={2}>
-                    <h6>RECURSOS</h6>
-                    <Nav className="flex-column">
-                        <Nav.Link href="#blog">Blog</Nav.Link>
-                        <Nav.Link href="#productos">Productos más recientes</Nav.Link>
-                        <Nav.Link href="#fabricantes">Nuevos fabricantes</Nav.Link>
-                        <Nav.Link href="#aplicaciones">Aplicaciones</Nav.Link>
-                        <Nav.Link href="#servicios">Servicios y herramientas</Nav.Link>
-                    </Nav>
+                    <h6>UBICACION</h6>
+                    <p>Almte. Guillermo Brown 446, B1708EFG Morón, Provincia de Buenos Aires</p>
+                    
                 </Col>
 
                 <Col md={2}>

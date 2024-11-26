@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
+import {Container, Row, Col, Breadcrumb} from 'react-bootstrap';
 
 import ManufacturerCard from '../components/ManufacturerCard'
 
 import {getFabricantes} from '../services/fabricantes';
-
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 function Fabricantes() {
     const [listaFabricantes, setlistaFabricantes] = useState([]);
