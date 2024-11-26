@@ -55,7 +55,7 @@ function Componentes() {
                 </thead>
                 <tbody>
                     {componentesFiltrados.map(c => (
-                        <tr>
+                        <tr key={c.id}>
                             <td>{c.id}</td>
                             <td>{c.nombre}</td>
                             <td>{c.descripcion}</td>

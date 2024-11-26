@@ -8,7 +8,6 @@ export async function getComponentes() {
     }
 
     result = await response.json();
-    console.log(result);
   } catch (error) {
     console.error(error.message);
   }

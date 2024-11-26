@@ -107,7 +107,7 @@ export default function DetalleProducto({ idProducto, onHide, show }) {
 
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={onHide}>Close</Button>
+        <Button onClick={onHide}>Cerrar</Button>
       </Modal.Footer>
     </Modal>
   );
