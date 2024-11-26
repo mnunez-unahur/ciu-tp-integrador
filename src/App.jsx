@@ -8,6 +8,7 @@ import Componentes from './views/Componentes'
 import Fabricantes from './views/Fabricantes'
 
 import AppFooter from './components/footer'
+import './App.css';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/fabricantes" element={<Fabricantes />} />
             </Routes>
         </BrowserRouter>
+        <div style={{}}></div>
         <AppFooter/>
 
     </div>
