@@ -3,6 +3,3 @@ services:
     volumes:
       - ./public:/app/public
       - ./src:/app/src
-  api:
-      volumes:
-      - ./data:/app/data
