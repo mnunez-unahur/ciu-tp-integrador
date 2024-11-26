@@ -24,6 +24,7 @@ services:
       NODE_ENV: production
       BIND_PORT: 3000
     volumes:
-      - api_data:/app/data
+      - ./data:/app/data
+
 volumes:
   api_data: {}

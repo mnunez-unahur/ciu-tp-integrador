@@ -4,7 +4,7 @@ WORKDIR /app
 COPY build/api/config.json ./config.json
 COPY api/package*.json ./
 RUN npm install
-USER node
+# USER node
 COPY --chown=node:node api/src ./src
 VOLUME /app/data
 EXPOSE 3000

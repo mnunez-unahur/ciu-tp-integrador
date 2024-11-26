@@ -4,13 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "docker compose -f docker-compose.yml -f docker-compose-dev.yml up -d && docker compose logs -f web && docker compose down",
+    "build": "git submodule update --init --recursive &&  docker compose build",
     "lint": "eslint .",
+    "start": "vite",
     "preview": "vite preview"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
+    "@fortawesome/free-brands-svg-icons": "^6.7.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "bootstrap": "^5.3.3",

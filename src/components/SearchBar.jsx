@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
+import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 
 
-function SearchBar({ value, onChange }) {
+function SearchBar({ value, onChange, placeholder}) {
     const [busqueda, setBusqueda] = useState("");
 
     useEffect(() => {
@@ -19,10 +16,11 @@ function SearchBar({ value, onChange }) {
 
 
     return (
-        <Container>
+        <Container style={{marginBottom: '20px'}}>
             <Row>
                 <Col xs={8} md={9}>
-                    <Form.Control type="text"
+                    <Form.Control type="text" 
+                        placeholder={placeholder}
                         value={busqueda}
                         onChange={(e) => { setBusqueda(e.target.value) }}
                     />

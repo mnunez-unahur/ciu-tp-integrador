@@ -1,5 +1,5 @@
-export async function getProductos() {
-  const url = "/api/fabricantes";
+export async function getComponentes() {
+  const url = "/api/componentes";
   let result = []
   try {
     const response = await fetch(url);
@@ -8,7 +8,6 @@ export async function getProductos() {
     }
 
     result = await response.json();
-    console.log(result);
   } catch (error) {
     console.error(error.message);
   }

@@ -1,5 +1,5 @@
-export async function getProductos() {
-  const url = "/api/componentes";
+export async function getFabricantes() {
+  const url = "/api/fabricantes";
   let result = []
   try {
     const response = await fetch(url);
