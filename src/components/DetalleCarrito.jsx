@@ -82,7 +82,7 @@ export default function DetalleCarrito({ carrito, onHide, show, onChange }) {
         </Card>
       </Modal.Body>
       <Modal.Footer>
-        <b>Total Compra: {total}</b>
+        <b>Total Compra: $ {total}</b>
         <div style={{ flexGrow: 1 }}></div>
         { (carrito.length > 0) ?
           (<Button variant="success" onClick={onHide}>Comprar</Button>)  : <span></span>
