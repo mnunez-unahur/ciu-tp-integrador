@@ -66,7 +66,7 @@ function CarouselInicio() {
       <Carousel.Item
         className=" w-100 h-100">
         <a href="https://www.youtube.com/watch?v=gScfbSsuJ5c&pp=ygULY29tcHJhZ2FtZXI%3D"
-        target='_blank'> 
+        target='_blank'>
         <Image
           className=" w-100 h-100 "
           src={slide4}
@@ -74,11 +74,10 @@ function CarouselInicio() {
           style={estiloImg}></Image>
 
           </a>
-        
+
         <Carousel.Caption style={estiloCaption}>
 
-          <h3>Asus ROG Strix Z890-E Gaming Wifi</h3>
-
+          <h3>Conocé el nuevo Asus ROG Strix Z890-E Gaming Wifi</h3>
         </Carousel.Caption>
       </Carousel.Item>
 
