@@ -8,7 +8,8 @@
     "build": "git submodule update --init --recursive &&  docker compose build",
     "lint": "eslint .",
     "start": "vite",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean": "docker compose down -v && docker image prune -a -f"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
